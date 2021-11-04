@@ -1,6 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
+var builder = Host.CreateDefaultBuilder(args);
+builder.ConfigureWebHostDefaults(webBuilder => 
+{ 
+    webBuilder.UseStartup<W3fy.Portal.Startup>();
+});
 var app = builder.Build();
-
-app.MapGet("/", () => "Hello W3fy!");
-
 app.Run();
