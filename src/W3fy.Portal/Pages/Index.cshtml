@@ -4,3 +4,41 @@
 }
 
 <h1>Hello W3fy!</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics[0].Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics[0].Created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics[0].RepliedCount)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Topics)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RepliedCount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
