@@ -1,7 +1,15 @@
 ﻿@page
 @model W3fy.Portal.Pages.IndexModel
+@inject Microsoft.Extensions.Options.IOptionsSnapshot<W3fy.Portal.Pages.PageInfo> PageOptions
 @{
 }
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>@PageOptions.Value.PageTitle</title>
+    <meta charset="utf-8">
+  </head>
 
 <h1>Hello W3fy!</h1>
 
@@ -42,3 +50,4 @@
         }
     </tbody>
 </table>
+</html>

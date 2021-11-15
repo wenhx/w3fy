@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using W3fy.Portal.Pages;
 
 namespace W3fy.Portal;
 
@@ -11,6 +12,9 @@ public class Startup
 
         services.AddDbContext<Data.W3fyDbContext>(options =>
             options.UseSqlite("Data Source=..\\..\\database\\W3fy.db"));
+
+        services.AddOptions<PageInfo>();
+        services.Configure<PageInfo>(options => options.PageTitle = "Welcome to W3fy!");
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
